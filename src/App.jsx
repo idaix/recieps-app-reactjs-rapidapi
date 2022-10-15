@@ -6,7 +6,7 @@ import "./App.css"
 
 const App = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <Feed />
     </div>
   )
