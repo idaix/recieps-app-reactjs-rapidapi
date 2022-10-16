@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react"
-import { Grid, Header, Loader, ReciepCard } from "../components"
+import { Grid, Header, Loader, ReciepCard, SearchSort, Sidebar } from "../components"
 import { fetchRecipes } from "../utils/fetchApi"
 
 const Feed = () => {
   const [recipes, setRecipes] = useState([])
+  const [categories, setCategories] = useState([])
   useEffect(()=>{
-    fetchRecipes(`list?limit=24&start=0`).then(data=>setRecipes(data.feed))
+    fetchRecipes(`feeds/list?limit=24&start=0`).then(data=>setRecipes(data.feed))
   }, [])
-  console.log(recipes);
-  if(!recipes.length) return <div className="w-full"><Loader /></div>
+
+  useEffect(()=>{
+    fetchRecipes('categories/list').then(data=>setCategories(data['browse-categories']))
+  }, [])
+  console.log(categories);
   return (
     <div>
       <Header />
-      <Grid>
-        {recipes.map((recipe, i)=>(
-          <ReciepCard key={i} {...recipe}/>
-        ))}
-      </Grid>
+      <main className="flex gap-2">
+        <Sidebar categories={categories} />
+        <div className="flex-1">
+          <SearchSort />
+          {recipes.length?(
+            <Grid>
+              {recipes.map((recipe, i)=>(
+                <ReciepCard key={i} {...recipe}/>
+              ))}
+            </Grid>
+          ):(<div className="w-full"><Loader /></div>)}
+        </div>
+      </main>
     </div>
   )
 }

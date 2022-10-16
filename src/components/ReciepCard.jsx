@@ -10,7 +10,7 @@ const ReciepCard = ({display, content}) => {
           <span>{display?.profiles?.[0].displayName}</span>
         </div>}
         <img loading='lazy' src={display?.images?.[0]} alt={display?.displayName} className='w-full h-auto' />
-        {content?.details?.totalTime&&<span className="absolute bottom-0 right-0 bg-primary px-3 m-1 rounded-full flex items-center gap-1"><CgTimelapse />{content?.details?.totalTime}</span>}
+        {content?.details?.totalTime&&<span className="absolute bottom-0 right-0 bg-primary/30 text-black/80 px-3 m-1 rounded-full flex items-center gap-1"><CgTimelapse />{content?.details?.totalTime}</span>}
       </div>
       <a href={display?.source?.sourceRecipeUrl} target='_blank'><h3 className="text-xl font-semibold text-gray-700 hover:text-primary">{display?.displayName}</h3></a>
     </div>

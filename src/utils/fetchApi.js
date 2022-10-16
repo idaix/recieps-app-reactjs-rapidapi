@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://yummly2.p.rapidapi.com/feeds'
+const BASE_URL = 'https://yummly2.p.rapidapi.com'
 const options = {
   url: BASE_URL,
   headers: {
