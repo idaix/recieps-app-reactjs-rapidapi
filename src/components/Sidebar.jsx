@@ -3,7 +3,8 @@ import Loader from './Loader/Loader'
 const Sidebar = ({ categories, setSearchValue, setIsOnSearch }) => {
   if(!categories.length) return <div className="w-full"><Loader /></div>
   return (
-    <div className='w-64 '>
+    <div className='hidden md:w-64 md:block'>
+      <h3 className='mb-5 font-semibold text-2xl'>Categories</h3>
       <ul>
         {categories.map(category=>(
           <li 

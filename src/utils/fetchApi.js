@@ -1,5 +1,7 @@
 import axios from "axios";
+// baseurl
 const BASE_URL = 'https://yummly2.p.rapidapi.com'
+
 const options = {
   url: BASE_URL,
   headers: {
@@ -8,7 +10,7 @@ const options = {
   }
 };
 
-
+// fetch
 export const fetchRecipes = async (url) => {
     const { data } = await axios.get(`${BASE_URL}/${url}`, options)
     

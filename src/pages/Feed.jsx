@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Grid, Header, Loader, ReciepCard, SearchSort, Sidebar } from "../components"
+import { Footer, Grid, Header, Loader, ReciepCard, SearchSort, Sidebar } from "../components"
 import { fetchRecipes } from "../utils/fetchApi"
 
 const Feed = () => {
@@ -38,6 +38,7 @@ const Feed = () => {
           ):(<div className="w-full"><Loader /></div>)}
         </div>
       </main>
+      
     </div>
   )
 }

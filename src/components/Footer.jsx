@@ -1,6 +1,11 @@
+import Logo from "./Logo"
+
 const Footer = () => {
   return (
-    <div>Dai Chekkal - RapidApi</div>
+    <div className="py-5 mt-5 bg-white flex items-center justify-center flex-col">
+      <Logo />
+      <p>Dai Chekkal - RapidApi</p>
+    </div>
   )
 }
 
