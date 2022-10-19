@@ -3,4 +3,4 @@
 [Live demo](https://wasfarecipes.vercel.app/)
 
 ### Home Page
-![home-light](./screenshot/home.png)
+![home](./sreenshot/home.png)
